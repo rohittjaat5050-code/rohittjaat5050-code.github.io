@@ -164,15 +164,12 @@ bar.style.width=value+"%";
 // ===============================
 // ANALYZE BUTTON
 // ===============================
-// ===============================
-// ANALYZE BUTTON
-// ===============================
 
 const btn = document.getElementById("analyze");
 
 if (btn) {
 
-btn.onclick = () => {
+btn.addEventListener("click", () => {
 
 const user = document.getElementById("username");
 
@@ -181,49 +178,20 @@ alert("Please enter a username.");
 return;
 }
 
-// Button Animation
-btn.innerHTML = "ANALYZING...";
+btn.innerHTML = "Analyzing...";
 btn.disabled = true;
 
-const bar = document.querySelector(".bar");
-
-let progress = 0;
-
-const loading = setInterval(() => {
-
-progress += 4;
-
-if (bar) {
-bar.style.width = progress + "%";
-}
-
-if (progress >= 100) {
-
-clearInterval(loading);
-
-btn.innerHTML = "SCAN COMPLETE ✓";
+setTimeout(() => {
+btn.innerHTML = "Analysis Complete ✓";
 
 setTimeout(() => {
-
-btn.innerHTML = "ANALYZE";
+btn.innerHTML = "Analyze";
 btn.disabled = false;
+}, 1500);
 
-// Dashboard Section
-const dashboard = document.getElementById("dashboard");
+}, 2000);
 
-if (dashboard) {
-dashboard.scrollIntoView({
-behavior: "smooth"
 });
-}
-
-},1000);
-
-}
-
-},80);
-
-};
 
 }
 
