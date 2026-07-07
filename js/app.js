@@ -164,24 +164,34 @@ bar.style.width=value+"%";
 // ===============================
 // ANALYZE BUTTON
 // ===============================
+// ===============================
+// ANALYZE BUTTON
+// ===============================
+
+const btn = document.getElementById("analyze");
+
+if (btn) {
 
 btn.onclick = () => {
 
 const user = document.getElementById("username");
 
 if (!user.value.trim()) {
-    alert("Please enter a username.");
-    return;
+alert("Please enter a username.");
+return;
 }
 
-// Progress Animation
+// Button Animation
+btn.innerHTML = "ANALYZING...";
+btn.disabled = true;
+
 const bar = document.querySelector(".bar");
 
 let progress = 0;
 
-const interval = setInterval(() => {
+const loading = setInterval(() => {
 
-progress += 5;
+progress += 4;
 
 if (bar) {
 bar.style.width = progress + "%";
@@ -189,16 +199,33 @@ bar.style.width = progress + "%";
 
 if (progress >= 100) {
 
-clearInterval(interval);
+clearInterval(loading);
 
-// Redirect to Dashboard
-window.location.href = "#dashboard";
+btn.innerHTML = "SCAN COMPLETE ✓";
+
+setTimeout(() => {
+
+btn.innerHTML = "ANALYZE";
+btn.disabled = false;
+
+// Dashboard Section
+const dashboard = document.getElementById("dashboard");
+
+if (dashboard) {
+dashboard.scrollIntoView({
+behavior: "smooth"
+});
+}
+
+},1000);
 
 }
 
-},100);
+},80);
 
 };
+
+}
 
 // ===============================
 // CARD HOVER
