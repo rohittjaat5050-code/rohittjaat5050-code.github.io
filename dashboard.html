@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>SnapSpy Dashboard</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/dashboard.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<canvas id="matrix"></canvas>
+
+<div class="overlay"></div>
+
+<header>
+
+<div class="logo">
+
+<div class="logo-circle">
+<i class="fa-solid fa-shield-halved"></i>
+</div>
+
+<div>
+
+<h2>SNAP<span>SPY</span></h2>
+
+<p>CYBER SECURITY DASHBOARD</p>
+
+</div>
+
+</div>
+
+</header>
+
+<section class="dashboard">
+
+<h1>SCAN RESULT</h1>
+
+<div class="user-box">
+
+<h2 id="username">Loading...</h2>
+
+<p>Status :
+<span class="online">
+CONNECTED
+</span>
+</p>
+
+</div>
+
+<div class="cards">
+<div class="card">
+
+<i class="fa-solid fa-user"></i>
+
+<h3>USERNAME</h3>
+
+<p id="userNameText">Loading...</p>
+
+</div>
+
+<div class="card">
+
+<i class="fa-solid fa-location-dot"></i>
+
+<h3>LOCATION</h3>
+
+<p>India (Demo)</p>
+
+</div>
+
+<div class="card">
+
+<i class="fa-solid fa-wifi"></i>
+
+<h3>IP ADDRESS</h3>
+
+<p>192.168.1.1</p>
+
+</div>
+
+<div class="card">
+
+<i class="fa-solid fa-shield-halved"></i>
+
+<h3>SECURITY SCORE</h3>
+
+<p>98%</p>
+
+</div>
+
+</div>
+
+<div class="terminal">
+
+<h2>
+<i class="fa-solid fa-terminal"></i>
+LIVE TERMINAL
+</h2>
+
+<pre id="terminal">
+
+> Connecting...
+
+> Secure Connection Established
+
+> Loading AI Engine...
+
+> Access Granted
+
+> Dashboard Ready...
+
+</pre>
+
+</div>
+
+<div class="back-btn">
+
+<a href="index.html">
+
+<i class="fa-solid fa-arrow-left"></i>
+
+Back To Home
+
+</a>
+
+</div>
+
+</section>
+
+<script src="js/dashboard.js"></script>
+
+</body>
+
+</html>
