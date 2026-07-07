@@ -165,33 +165,40 @@ bar.style.width=value+"%";
 // ANALYZE BUTTON
 // ===============================
 
-const btn =
-document.getElementById("analyze");
+btn.onclick = () => {
 
-if(btn){
+const user = document.getElementById("username");
 
-btn.onclick=()=>{
+if (!user.value.trim()) {
+    alert("Please enter a username.");
+    return;
+}
 
-const user=
-document.getElementById("username");
+// Progress Animation
+const bar = document.querySelector(".bar");
 
-if(!user.value.trim()){
+let progress = 0;
 
-alert("Please enter a username.");
+const interval = setInterval(() => {
 
-return;
+progress += 5;
+
+if (bar) {
+bar.style.width = progress + "%";
+}
+
+if (progress >= 100) {
+
+clearInterval(interval);
+
+// Redirect to Dashboard
+window.location.href = "#dashboard";
 
 }
 
-alert(
-"Demo Mode\n\nUser: "
-+user.value+
-"\n\nCyber dashboard visualization loaded."
-);
+},100);
 
 };
-
-}
 
 // ===============================
 // CARD HOVER
