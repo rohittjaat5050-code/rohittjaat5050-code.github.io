@@ -178,23 +178,15 @@ alert("Please enter a username.");
 return;
 }
 
-btn.innerHTML = "Analyzing...";
-btn.disabled = true;
+// Username save karo
+localStorage.setItem("snapspyUser", user.value);
 
-setTimeout(() => {
-btn.innerHTML = "Analysis Complete ✓";
-
-setTimeout(() => {
-btn.innerHTML = "Analyze";
-btn.disabled = false;
-}, 1500);
-
-}, 2000);
+// Dashboard page open karo
+window.location.href = "dashboard.html";
 
 });
 
 }
-
 // ===============================
 // CARD HOVER
 // ===============================
